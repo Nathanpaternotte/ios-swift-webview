@@ -11,8 +11,10 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-	var window: UIWindow?
-
+	lazy var window: UIWindow = {
+		let window = FBTweakShakeWindow(frame: UIScreen.mainScreen().bounds)
+		return window
+	}()
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
