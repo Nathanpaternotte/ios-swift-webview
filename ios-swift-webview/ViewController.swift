@@ -14,7 +14,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
 	@IBOutlet weak var webView: UIWebView!
 	var webViewController: WKWebView?
 	let tweaks = Tweaks()
-	let defaultUrl = "http://192.168.1.102:8080/examples/"
+	let defaultUrl = "http://10.10.0.64:8080/examples/"
 	
 	override func loadView() {
 		super.loadView()
@@ -39,7 +39,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
 	
 		self.webViewController!.navigationDelegate = self
 	
-		tweaks.tweakActionForCategory("Web View", collectionName: "AppUrl", name: "Url", defaultValue: "http://192.168.1.102:8080/examples/", action: { (currentValue) -> () in
+		tweaks.tweakActionForCategory("Web View", collectionName: "AppUrl", name: "Url", defaultValue: "http://10.10.0.64:8080/examples/", action: { (currentValue) -> () in
 			var updatedValue = currentValue as String
 			var updatedUrl = NSURL(string: updatedValue)
 			var updatedRequest = NSURLRequest(URL: updatedUrl!)
@@ -48,7 +48,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
 		})
 	
 		//		let url = NSURL(string: "http://192.168.1.102:8080/examples/")
-		let TweakUrl = Tweaks.tweakValueForCategoy("Web View", collectionName: "AppUrl", name: "Url", defaultValue: "http://192.168.1.102:8080/examples/")
+		let TweakUrl = Tweaks.tweakValueForCategoy("Web View", collectionName: "AppUrl", name: "Url", defaultValue: "http://10.10.0.64:8080/examples/")
 		let url = NSURL(string: TweakUrl)
 		let request = NSURLRequest(URL: url!)
 
